@@ -1,5 +1,6 @@
 using System;
 using Bakery.Items;
+using Bakery.Users;
 
 class Program
 {
@@ -11,25 +12,32 @@ class Program
     Console.WriteLine("You're in luck! We are running some great promotions today!");
     Console.WriteLine("Bread is buy 2 get 1 free!");
     Console.WriteLine("Pastries are 3 for $5!");
+    User newUser = new User(0, 0, 50);
     Bread userBread = new Bread(0, 0);
     Bread.HowManyLoaves(userBread);
 
     Pastry userPastry = new Pastry(0, 0);
-
-    // Console.WriteLine("userPastry.PastryCost: " + userPastry.PastryCost);
 
     Pastry.HowManyPastries(userPastry);
 
     Console.WriteLine("So I have " + userBread.Loaves + " loaves of bread");
     Console.WriteLine("and " + userPastry.Pastries + " pastries");
 
-    Program.IsThatCorrect(userBread, userPastry);
+    Program.IsThatCorrect(userBread, userPastry, newUser);
+    Program.CashOrCard(newUser);
   }
-  public static void IsThatCorrect(Bread userBread, Pastry userPastry)
+
+
+
+
+
+
+
+  public static void IsThatCorrect(Bread userBread, Pastry userPastry, User newUser)
   {
     Console.WriteLine("Is that correct?");
     string checkOutResponse = Console.ReadLine();
-    int totalCost = (userBread.BreadCost + userPastry.PastryCost);
+    newUser.Total = (userBread.BreadCost + userPastry.PastryCost);
     if (checkOutResponse.Contains("yeah") || checkOutResponse.Contains("sure") || checkOutResponse.Contains("yep") || checkOutResponse.Contains("yes"))
     {
       if (userBread.Loaves > 0 && userPastry.Pastries > 0)
@@ -42,17 +50,30 @@ class Program
       }
       else if (userPastry.Pastries == 0)
       {
-        Console.WriteLine(userBread.Loaves + " loaves of bread comes out to  $" + userBread.BreadCost);
+        Console.WriteLine(userBread.Loaves + " loaves of bread comes out to  $" + newUser.Total);
       }
     }
     else
     {
-      Console.WriteLine("")
+      Console.WriteLine("I'm sorry ");
       Program.Main();
     }
   }
-  public static void CashOrCard()
+  public static void CashOrCard(User newUser)
   {
-  
+  Console.WriteLine("Would you like to pay with cash or card?");
+  string userPaymentResponse = Console.ReadLine().ToLower();
+  if (userPaymentResponse.Contains("cash"))
+  {
+    Console.WriteLine("Enter the bill you are paying with");
+    Console.WriteLine("[$50] [$20] [$10] [$5] [$1]");
   }
+
+
+  else if (userPaymentResponse.Contains("card") || userPaymentResponse.Contains("card") || userPaymentResponse.Contains("debit") || userPaymentResponse.Contains("credit") || userPaymentResponse.Contains("plastic") || userPaymentResponse.Contains("amex") || userPaymentResponse.Contains("visa") || userPaymentResponse.Contains("mastercard"))
+  {
+  Console.WriteLine("Insert your card. DON'T SWIPE IT! IT'S 2020!");
+  }
+  }
+
 }

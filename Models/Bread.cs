@@ -14,7 +14,7 @@ namespace Bakery.Items
     public static void HowManyLoaves(Bread userBread)
     {
     Console.WriteLine("Would you like any bread today?");
-    string userBreadResponse = Console.ReadLine();
+    string userBreadResponse = Console.ReadLine().ToLower();
 
     if (userBreadResponse.Contains("yeah") || userBreadResponse.Contains("sure") || userBreadResponse.Contains("yep") || userBreadResponse.Contains("yes"))
     {
@@ -61,7 +61,7 @@ namespace Bakery.Items
     public static void HowManyPastries(Pastry userPastry)
     {
     Console.WriteLine("Would you like any pastries today?");
-    string userPastryResponse = Console.ReadLine();
+    string userPastryResponse = Console.ReadLine().ToLower();
 
     if (userPastryResponse.Contains("yeah") || userPastryResponse.Contains("sure") || userPastryResponse.Contains("yep") || userPastryResponse.Contains("yes"))
     {
