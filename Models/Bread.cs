@@ -3,24 +3,47 @@ namespace Bakery.Bread
 {
   public class Bread
   {
-    public string Name { get; set; }
-    public int Cost { get; set;}
+    public int BreadCost { get; set;}
+    public int Loaves {get; set;}
 
-    public Bread(string name, int cost)
+    public Bread( int breadCost, int loaves)
     {
-      Name = name;
-      Cost = cost;
+      BreadCost = breadCost;
+      Loaves = loaves;
+    }
+    public static void HowManyLoaves(Bread userBread)
+    {
+    Console.WriteLine("Would you like any bread today?");
+    string userBreadResponse = Console.ReadLine();
+
+    if (userBreadResponse.Contains("yeah") || userBreadResponse.Contains("sure") || userBreadResponse.Contains("yep") || userBreadResponse.Contains("yes"))
+    {
+    Console.WriteLine("How many loaves of bread would you like?");
+    string stringHowManyLoaves = Console.ReadLine();
+    Console.WriteLine("You want " + stringHowManyLoaves + " loaves?");
+    int howManyLoaves = int.Parse(stringHowManyLoaves);
+    userBread.BreadCost = howManyLoaves * 5;
+    Console.WriteLine(userBread.BreadCost);
+    }
+
+    else
+    {
+      Console.WriteLine("You messed this if statement up");
+    }
+
     }
   }
+  
     public class Pastry
   {
-    public string Name { get; set; }
-    public int Cost { get; set;}
+    public int PastryCost { get; set;}
+    public int Pastries { get; set; }
 
-    public Pastry(string name, int cost)
+    public Pastry(int pastryCost, int pastries)
     {
-      Name = name;
-      Cost = cost;
+      PastryCost = pastryCost;
+      Pastries = pastries;
+
     }
   }
 }
