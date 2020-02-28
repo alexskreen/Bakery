@@ -14,5 +14,20 @@ namespace Bakery.Users
       Payment = payment;
       Wallet = wallet;
     }
+
+    public static void UserBills(User newUser)
+    {
+      Console.WriteLine("Enter the bill you are paying with");
+      Console.WriteLine("[$50] [$20] [$10] [$5] [$1]");
+      string stringUserBillSelect = Console.ReadLine();
+      newUser.Payment += int.Parse(stringUserBillSelect);
+      Console.WriteLine("Do you have any other bills you'd like to use?");
+      string userBillAnswer = Console.ReadLine();
+      if (userBillAnswer.Contains("yeah") || userBillAnswer.Contains("sure") || userBillAnswer.Contains("yep") || userBillAnswer.Contains("yes"))
+      {
+      UserBills(newUser);
+      }
+
+  }
   }
 }

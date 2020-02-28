@@ -66,11 +66,9 @@ class Program
     string userPaymentResponse = Console.ReadLine().ToLower();
     if (userPaymentResponse.Contains("cash"))
     {
-      Console.WriteLine("Enter the bill you are paying with");
-      Console.WriteLine("[$50] [$20] [$10] [$5] [$1]");
+      Console.WriteLine("TEST WORKED!");
+    User.UserBills(newUser);
     }
-
-
     else if (userPaymentResponse.Contains("card") || userPaymentResponse.Contains("card") || userPaymentResponse.Contains("debit") || userPaymentResponse.Contains("credit") || userPaymentResponse.Contains("plastic") || userPaymentResponse.Contains("amex") || userPaymentResponse.Contains("visa") || userPaymentResponse.Contains("mastercard"))
     {
       Console.WriteLine("Insert your card. DON'T SWIPE IT! IT'S 2020!");
