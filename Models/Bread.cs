@@ -22,14 +22,31 @@ namespace Bakery.Bread
     string stringHowManyLoaves = Console.ReadLine();
     Console.WriteLine("You want " + stringHowManyLoaves + " loaves?");
     int howManyLoaves = int.Parse(stringHowManyLoaves);
-    userBread.BreadCost = howManyLoaves * 5;
-    Console.WriteLine(userBread.BreadCost);
+    
+      // if (userBread.BreadCost <= 2)
+      // {
+      // userBread.BreadCost = howManyLoaves * 5;
+      // Console.WriteLine(userBread.BreadCost);
+      // }
+      if (howManyLoaves %3 == 0)
+      {
+      int freeLoaves = (howManyLoaves/3);
+      userBread.BreadCost = ((howManyLoaves - freeLoaves) * 5);
+      Console.WriteLine(userBread.BreadCost);
+      }
+      else
+      {
+      int freeLoaves = (howManyLoaves/3);
+      userBread.BreadCost = ((howManyLoaves - freeLoaves) * 5);
+      Console.WriteLine(userBread.BreadCost);
+      }
     }
-
     else
     {
-      Console.WriteLine("You messed this if statement up");
+      Console.WriteLine("That's too bad, our bread is really good!");
     }
+
+
 
     }
   }
