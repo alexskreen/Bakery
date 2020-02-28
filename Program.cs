@@ -1,6 +1,7 @@
 using System;
 using Bakery.Items;
 using Bakery.Users;
+using Bakery.Wheel;
 
 class Program
 {
@@ -61,19 +62,28 @@ class Program
   }
   public static void CashOrCard(User newUser)
   {
-  Console.WriteLine("Would you like to pay with cash or card?");
-  string userPaymentResponse = Console.ReadLine().ToLower();
-  if (userPaymentResponse.Contains("cash"))
-  {
-    Console.WriteLine("Enter the bill you are paying with");
-    Console.WriteLine("[$50] [$20] [$10] [$5] [$1]");
-  }
+    Console.WriteLine("Would you like to pay with cash or card?");
+    string userPaymentResponse = Console.ReadLine().ToLower();
+    if (userPaymentResponse.Contains("cash"))
+    {
+      Console.WriteLine("Enter the bill you are paying with");
+      Console.WriteLine("[$50] [$20] [$10] [$5] [$1]");
+    }
 
 
-  else if (userPaymentResponse.Contains("card") || userPaymentResponse.Contains("card") || userPaymentResponse.Contains("debit") || userPaymentResponse.Contains("credit") || userPaymentResponse.Contains("plastic") || userPaymentResponse.Contains("amex") || userPaymentResponse.Contains("visa") || userPaymentResponse.Contains("mastercard"))
-  {
-  Console.WriteLine("Insert your card. DON'T SWIPE IT! IT'S 2020!");
-  }
+    else if (userPaymentResponse.Contains("card") || userPaymentResponse.Contains("card") || userPaymentResponse.Contains("debit") || userPaymentResponse.Contains("credit") || userPaymentResponse.Contains("plastic") || userPaymentResponse.Contains("amex") || userPaymentResponse.Contains("visa") || userPaymentResponse.Contains("mastercard"))
+    {
+      Console.WriteLine("Insert your card. DON'T SWIPE IT! IT'S 2020!");
+
+      // This code is a loading bar for a card reader. I couldn't quite get it to work
+
+      // ConsoleSpinner spinner = new ConsoleSpinner();
+      // spinner.Delay = 300;
+      // while (true)
+      // {
+      //   spinner.Turn(displayMsg: "Loading ", sequenceCode: 5);
+      // }
+    }
   }
 
 }
