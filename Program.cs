@@ -23,18 +23,18 @@ class Program
   Console.WriteLine("So I have " + userBread.Loaves + " loaves of bread");
   Console.WriteLine("and " + userPastry.Pastries + " pastries");
 
-  Pastry.isThatCorrect();
+  Program.isThatCorrect(userBread, userPastry);
 
 
 
   }
-  public static void isThatCorrect()
+  public static void isThatCorrect(Bread userBread, Pastry userPastry)
   {
   Console.WriteLine("Is that correct?");
   string checkOutResponse = Console.ReadLine();
   if (checkOutResponse.Contains("yeah") || checkOutResponse.Contains("sure") || checkOutResponse.Contains("yep") || checkOutResponse.Contains("yes"))
   {
-  Console.WriteLine(" ");
+  Console.WriteLine(userBread.Loaves + " loaves of bread and " + userPastry.Pastries + " comes out to  $" + userBread.BreadCost);
   }
 
 
