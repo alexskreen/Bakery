@@ -11,8 +11,8 @@ class Program
   Console.WriteLine("You're in luck! We are running some great promotions today!");
   Console.WriteLine("Bread is buy 2 get 1 free!");
   Console.WriteLine("Pastries are 3 for $5!");
-
-
+  Bread userBread = new Bread (0, 0);
+  Bread.HowManyLoaves(userBread);
 
 
   }
