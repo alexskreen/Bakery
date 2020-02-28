@@ -14,6 +14,12 @@ class Program
   Bread userBread = new Bread (0, 0);
   Bread.HowManyLoaves(userBread);
 
+  Pastry userPastry = new Pastry (0, 0);
+
+  // Console.WriteLine("userPastry.PastryCost: " + userPastry.PastryCost);
+
+  Pastry.HowManyPastries(userPastry);
+
 
   }
 }
