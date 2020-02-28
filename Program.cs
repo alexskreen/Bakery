@@ -1,5 +1,5 @@
 using System;
-using Bakery.Bread;
+using Bakery.Items;
 
 class Program
 {
@@ -20,6 +20,23 @@ class Program
 
   Pastry.HowManyPastries(userPastry);
 
+  Console.WriteLine("So I have " + userBread.Loaves + " loaves of bread");
+  Console.WriteLine("and " + userPastry.Pastries + " pastries");
+
+  Pastry.isThatCorrect();
+
+
 
   }
+  public static void isThatCorrect()
+  {
+  Console.WriteLine("Is that correct?");
+  string checkOutResponse = Console.ReadLine();
+  if (checkOutResponse.Contains("yeah") || checkOutResponse.Contains("sure") || checkOutResponse.Contains("yep") || checkOutResponse.Contains("yes"))
+  {
+  Console.WriteLine(" ");
+  }
+
+
+    }
 }

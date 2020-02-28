@@ -1,5 +1,5 @@
 using System;
-namespace Bakery.Bread
+namespace Bakery.Items
 {
   public class Bread
   {
@@ -84,13 +84,24 @@ namespace Bakery.Bread
       userPastry.PastryCost = ((userPastry.Pastries * 2) - freePastries);
       Console.WriteLine("userPastry.PastryCost: " + userPastry.PastryCost);
       Console.WriteLine("userPastry.Pastries: " + userPastry.Pastries);
-
       }
     }
     else
     {
       Console.WriteLine("That's too bad, our Pastry is really good!");
     }
+    }
+
+    public static void isThatCorrect()
+    {
+    Console.WriteLine("Is that correct?");
+    string checkOutResponse = Console.ReadLine();
+    if (checkOutResponse.Contains("yeah") || checkOutResponse.Contains("sure") || checkOutResponse.Contains("yep") || checkOutResponse.Contains("yes"))
+    {
+    Console.WriteLine("This if statement works");
+    }
+
+
     }
   }
 }
