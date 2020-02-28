@@ -66,7 +66,6 @@ class Program
     string userPaymentResponse = Console.ReadLine().ToLower();
     if (userPaymentResponse.Contains("cash"))
     {
-      Console.WriteLine("TEST WORKED!");
     User.UserBills(newUser);
     }
     else if (userPaymentResponse.Contains("card") || userPaymentResponse.Contains("card") || userPaymentResponse.Contains("debit") || userPaymentResponse.Contains("credit") || userPaymentResponse.Contains("plastic") || userPaymentResponse.Contains("amex") || userPaymentResponse.Contains("visa") || userPaymentResponse.Contains("mastercard"))

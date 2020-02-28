@@ -27,6 +27,15 @@ namespace Bakery.Users
       {
       UserBills(newUser);
       }
+      else
+      {
+      Console.WriteLine("You are paying with $" + newUser.Payment);
+      if (newUser.Payment < newUser.Total)
+      {
+      int userShortBy = Math.Abs(newUser.Payment - newUser.Total);
+      Console.WriteLine("I'm sorry, it looks like you are about $" + userShortBy);
+      }
+      }
 
   }
   }
