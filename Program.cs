@@ -25,8 +25,8 @@ class Program
 
     Pastry.HowManyPastries(userPastry);
 
-    Console.WriteLine("So I have " + userBread.Loaves + " loaves of bread");
-    Console.WriteLine("and " + userPastry.Pastries + " pastries");
+    // Console.WriteLine("So I have " + userBread.Loaves + " loaves of bread");
+    // Console.WriteLine("and " + userPastry.Pastries + " pastries");
 
     Program.IsThatCorrect(userBread, userPastry, newUser);
     Program.CashOrCard(newUser);
@@ -42,27 +42,47 @@ class Program
     }
   }
 
+public static void OrderConfirmation(Bread userBread, Pastry userPastry)
+{
+          string checkOutResponse = Console.ReadLine();
+        if (checkOutResponse.Contains("yeah") || checkOutResponse.Contains("sure") || checkOutResponse.Contains("yep") || checkOutResponse.Contains("yes"))
+        {
+          Console.WriteLine(userBread.Loaves + " loaves of bread and " + userPastry.Pastries + " pastries " + " comes out to  $" + (userBread.BreadCost + userPastry.PastryCost));
+        }
+}
 
   public static void IsThatCorrect(Bread userBread, Pastry userPastry, User newUser)
   {
-    Console.WriteLine("Is that correct?");
-    string checkOutResponse = Console.ReadLine();
     newUser.Total = (userBread.BreadCost + userPastry.PastryCost);
-    if (checkOutResponse.Contains("yeah") || checkOutResponse.Contains("sure") || checkOutResponse.Contains("yep") || checkOutResponse.Contains("yes"))
-    {
       if (userBread.Loaves > 0 && userPastry.Pastries > 0)
       {
-        Console.WriteLine(userBread.Loaves + " loaves of bread and " + userPastry.Pastries + " pastries " + " comes out to  $" + (userBread.BreadCost + userPastry.PastryCost));
+        Console.WriteLine("So I have " + userBread.Loaves + " loaves of bread");
+        Console.WriteLine("and " + userPastry.Pastries + " pastries");
+        Console.WriteLine("Is that correct?");
+        Program.OrderConfirmation(userBread, userPastry);
       }
-      else if (userBread.Loaves == 0)
+      else if (userBread.Loaves == 0 && userPastry.Pastries == 0)
       {
+      Console.WriteLine("I'm sorry, it looks like your basket is empty. I can't check you out. Look around and see if there is anything that catches your eye.");
+      Program.Welcome();
+      }
+      
+      else if (userBread.Loaves == 0 && userPastry.Pastries > 0)
+      {
+        Console.WriteLine("So I have " + userPastry.Pastries + " pastries");
+        Console.WriteLine("Is that correct?");
         Console.WriteLine(userPastry.Pastries + " pasteries comes out to  $" + userPastry.PastryCost);
+        Console.WriteLine("Is that correct?");
+        Program.OrderConfirmation(userBread, userPastry);
       }
-      else if (userPastry.Pastries == 0)
+      else if (userPastry.Pastries == 0 && userBread.Loaves > 0)
       {
+        Console.WriteLine("So I have " + userBread.Loaves + " loaves of bread");
+        Console.WriteLine("Is that correct?");
         Console.WriteLine(userBread.Loaves + " loaves of bread comes out to  $" + newUser.Total);
+        Console.WriteLine("Is that correct?");
+        Program.OrderConfirmation(userBread, userPastry);
       }
-    }
     else
     {
       Console.WriteLine("I'm sorry ");
