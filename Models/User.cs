@@ -49,7 +49,8 @@ namespace Bakery.Users
       {
       int userChange = Math.Abs(newUser.Payment - newUser.Total);
       Console.WriteLine("Your total was $" + newUser.Total + ". You're paying with $" + newUser.Payment + ". Your change is $" + userChange);
-      newUser.Wallet += userChange;
+      newUser.Wallet -= newUser.Total;
+      Console.WriteLine("You now have $" + newUser.Wallet + " in your wallet");
       }
       }
       }

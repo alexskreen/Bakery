@@ -13,6 +13,10 @@ class Program
     Console.WriteLine("You're in luck! We are running some great promotions today!");
     Console.WriteLine("Bread is buy 2 get 1 free!");
     Console.WriteLine("Pastries are 3 for $5!");
+    Program.Welcome();
+  }
+  public static void Welcome()
+  {
     User newUser = new User(0, 0, 50);
     Bread userBread = new Bread(0, 0);
     Bread.HowManyLoaves(userBread);
@@ -26,8 +30,17 @@ class Program
 
     Program.IsThatCorrect(userBread, userPastry, newUser);
     Program.CashOrCard(newUser);
+    Console.WriteLine("Can I help you with anything else today?");
+    string anythingElse = Console.ReadLine();
+    if (anythingElse.Contains("yeah") || anythingElse.Contains("sure") || anythingElse.Contains("yep") || anythingElse.Contains("yes"))
+    {
+    Program.Welcome();
+    }
+    else
+    {
+    Console.WriteLine("Have a wonderful day and come back soon!");
+    }
   }
-
 
 
   public static void IsThatCorrect(Bread userBread, Pastry userPastry, User newUser)
