@@ -20,23 +20,17 @@ namespace Bakery.Items
     {
     Console.WriteLine("How many loaves of bread would you like?");
     string stringHowManyLoaves = Console.ReadLine();
-    // Console.WriteLine("You want " + stringHowManyLoaves + " loaves?");
     int howManyLoaves = int.Parse(stringHowManyLoaves);
     userBread.Loaves = (howManyLoaves);    
       if (userBread.Loaves %3 == 0)
       {
       int freeLoaves = (userBread.Loaves/3);
       userBread.BreadCost = ((userBread.Loaves - freeLoaves) * 5);
-      // Console.WriteLine(userBread.BreadCost);
-      // Console.WriteLine("userBread.BreadCost: " + userBread.BreadCost);
-      // Console.WriteLine("userBread.Loaves: " + userBread.Loaves);
       }
       else
       {
       int freeLoaves = (userBread.Loaves/3);
       userBread.BreadCost = ((userBread.Loaves - freeLoaves) * 5);
-      // Console.WriteLine("userBread.BreadCost: " + userBread.BreadCost);
-      // Console.WriteLine("userBread.Loaves: " + userBread.Loaves);
 
       }
     }
@@ -67,30 +61,19 @@ namespace Bakery.Items
     {
     Console.WriteLine("How many pastries would you like?");
     string stringHowManyPastries = Console.ReadLine();
-    // Console.WriteLine("You want " + stringHowManyPastries + " pastries?");
     int howManyPastries = int.Parse(stringHowManyPastries);
     userPastry.Pastries = (howManyPastries);    
       if (userPastry.Pastries %3 == 0)
       {
       int freePastries = (userPastry.Pastries/3);
       userPastry.PastryCost = ((userPastry.Pastries * 2) - freePastries);
-      // Console.WriteLine(userPastry.PastryCost);
-      // Console.WriteLine("userPastry.PastryCost: " + userPastry.PastryCost);
-      // Console.WriteLine("userPastry.Pastries: " + userPastry.Pastries);
       }
       else
       {
       int freePastries = (userPastry.Pastries/3);
       userPastry.PastryCost = ((userPastry.Pastries * 2) - freePastries);
-      // Console.WriteLine("userPastry.PastryCost: " + userPastry.PastryCost);
-      // Console.WriteLine("userPastry.Pastries: " + userPastry.Pastries);
       }
     }
-    // else
-    // {
-    //   Console.WriteLine("That's too bad, our Pastry is really good!");
-    //   Console.WriteLine("Bread and Pastries are the only things we currently offer. It's a very odd bakery. Feel free to look around.");
-    // }
     }
   }
 }
