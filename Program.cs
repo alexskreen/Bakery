@@ -30,10 +30,6 @@ class Program
 
 
 
-
-
-
-
   public static void IsThatCorrect(Bread userBread, Pastry userPastry, User newUser)
   {
     Console.WriteLine("Is that correct?");
