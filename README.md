@@ -5,7 +5,7 @@
 #### By _**Alex Skreen**_
 
 ## Description
-###Alex's Bakery
+### Alex's Bakery
 
 When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
 
@@ -19,6 +19,15 @@ Bread: Buy 2, get 1 free. A single loaf costs \$5.
 Pastry: Buy 1 for \$2 or 3 for \$5.
 
 ## Setup/Installation Requirements
+
+
+### Node install
+
+_Install Git with the following command:_
+* ``$ brew install git``
+
+_Next, install Node.js by entering the following command in Terminal:_
+* ``$ brew install node``
 
 ### .NET and C# install
 
@@ -36,15 +45,6 @@ _If .NET and C# are not installed on your computer already, then install using t
 * run ``echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile`` in the command line.
 * Download the [MySQL Workbench DMG File](https://dev.mysql.com/downloads/file/?id=484391)
 * Click the download icon Use the No thanks, just start my download link.
-
-### Node install
-
-_Install Git with the following command:_
-* ``$ brew install git``
-
-_Next, install Node.js by entering the following command in Terminal:_
-* ``$ brew install node``
-
 ### Setup/install this application
 
 _Clone this repository via Terminal using the following commands:_
@@ -52,7 +52,7 @@ _Clone this repository via Terminal using the following commands:_
 * ``$ git clone https://github.com/alexskreen/Bakery``
 * ``$ cd bakery``
 
-_Confirm that you have navigated to the Bakery directory (e.g., by entering the command_ ``pwd`` _in Terminal). 
+_Confirm that you have navigated to the Bakery directory (e.g., by entering the command_ ``pwd`` in terminal). 
 
 _Next, build the project and all of its dependencies at the project's root directory via the following command:_
 * ``$ dotnet build``
